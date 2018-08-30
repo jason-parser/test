@@ -1,0 +1,585 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "smart-grid"
+
+@include reset()
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+html, body
+	max-width: 100%
+
+html
+	box-sizing: border-box
+	overflow-y: auto!important
+	margin-right: 0px!important
+
+br
+	line-height: 0
+
+.br
+	display: none
+
+.text_center
+	text-align: center
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: $RL
+	margin: 0px auto
+	overflow-x: hidden
+	background-color: #F2F5F8
+	color: $text
+
+.body_loader
+	background: none repeat scroll 0 0 #F2F5F8
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		background-image: url("../img/preloader.gif")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+		background-color: #F2F5F8
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+a, button
+	color: $text
+	text-decoration: none
+	outline: none
+	transition: all 0.3s ease
+	border: none
+	display: inline-block
+	cursor: pointer
+	&:focus, &:hover, &:active, &:visited
+		color: $text
+		text-decoration: none!important
+		outline: none
+		transition: all 0.3s ease
+		border: none
+		cursor: pointer
+
+img
+	vertical-align: bottom
+	max-width: none
+
+.wrapper
+	@include wrapper()
+
+.btn
+	outline: none
+	border: none
+	padding: 19px 35px
+	text-transform: uppercase
+	text-align: center
+	font-size: 12px
+	color: #fff!important
+	font-family: $MB
+	@include psd-letter-spacing(100)
+	display: inline-block
+	max-width: 100%
+	vertical-align: middle
+
+.btn_accent
+	background: $accent
+	background: -moz-linear-gradient(left, $accent, $accent2)
+	background: -webkit-linear-gradient(left, $accent, $accent2)
+	background: linear-gradient(to right, $accent, $accent2)
+	&:hover
+		opacity: .8
+
+.btn_white
+	background: transparent
+	box-shadow: inset 0px 0px 0px 2px #fff
+	color: #fff!important
+	&:hover
+		background: #fff
+		color: #282828!important
+
+
+/*##########################  1. Шапка  ##########################*/
+
+
+.header
+	background-position: center center
+	background-size: cover
+	padding: 45px 0px 52px
+
+.header__head
+	background-color: #fff
+	margin-bottom: 60px
+	padding: 13px 0px
+
+.h-head__content
+	display: flex
+
+.header__contacts
+	margin-left: auto
+	display: flex
+	align-items: center
+
+.header__content
+	position: relative
+	color: #fff
+	text-align: center
+	padding: 95px 0px 108px
+
+.border-box
+	background-image: url('../img/border.png')
+	background-size: 100% 100%
+	width: 421px
+	height: 100%
+	position: absolute
+	top: 0px
+	right: 50%
+	margin-right: -8px
+
+.header__wrap
+	position: relative
+	z-index: 2
+
+h1, .h1
+	font-size: 55px
+	text-transform: uppercase
+	@include psd-letter-spacing(25)
+	font-family: $MB
+	display: inline-block
+	border-bottom: 1px solid rgba(#fff, .3)
+	padding-right: 15px
+	line-height: 1.4
+	margin-bottom: 19px
+
+.h1__desc
+	font-size: 30px
+	font-family: $MM
+	margin-bottom: 20px
+	line-height: 38px
+	background-color: rgba(#099676, .6)
+	display: inline-block
+	padding: 12px 62px
+
+.email__wrap
+	position: relative
+	padding-left: 48px
+	line-height: 20px
+	margin-right: 70px
+
+.header__desc
+	font-size: 16px
+	margin-bottom: 26px
+	@include psd-letter-spacing(75)
+
+.email__icon, .phone__icon
+	left: 0px
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+
+.email__title
+	font-size: 15px
+	font-family: $MM
+	display: block
+	color: #282828
+
+.email
+	font-size: 15px
+	color: #282828
+
+.phone
+	font-size: 20px
+	font-family: $MM
+	position: relative
+	padding-left: 36px
+	color: #282828!important
+
+.to-contacts__btn
+	padding-left: 50px
+	padding-right: 50px
+
+.our-proj__title
+	text-transform: uppercase
+	font-family: $MB
+	opacity: .64
+	margin-bottom: 20px
+	@include psd-letter-spacing(200)
+
+.our-proj__btns
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-grow: 1
+	position: relative
+	top: 3px
+	p
+		&:not(:last-child)
+			margin-right: 46px
+
+.our-proj__btn
+	text-transform: uppercase
+	font-size: 12px
+	font-family: $MB
+	color: #282828!important
+	padding-bottom: 3px
+	border-bottom: 2px solid transparent
+	@include psd-letter-spacing(100)
+	&:hover
+		border-bottom: 2px solid #BBD48C
+
+.section, .header
+	overflow: hidden
+
+.slide__photo
+	display: block
+	img
+		max-width: 100%
+		transition: all 0.5s ease
+	&:hover
+		img
+			transform: scale(1.05,1.05)
+
+
+/*##########################  2. Проекты  ##########################*/
+
+
+h2
+	font-size: 26px
+	font-family: $MB
+	color: #010101
+	text-transform: uppercase
+	@include psd-letter-spacing(160)
+	text-align: center
+	margin-bottom: 35px
+
+.section
+	padding: 75px 0px 110px 
+
+.sect__desc
+	font-size: 18px
+	line-height: 28px
+	text-align: center
+	margin-bottom: 25px
+
+.proj__view
+	margin-bottom: 16px
+
+.proj__about
+	color: #fff
+	margin-bottom: 60px
+	padding: 32px 0px 40px
+	background: $accent2
+	background: -moz-linear-gradient(left, $accent, $accent2)
+	background: -webkit-linear-gradient(left, $accent, $accent2)
+	background: linear-gradient(to right, $accent, $accent2)
+
+.about__items
+	@include row-flex()
+
+.about__item
+	@include col()
+	@include size(3)
+	@include size-md(6)
+	@include size-xs(12)
+	text-align: center
+
+.about__text
+	font-size: 14px
+
+.about__icon
+	width: 72px
+	height: 74px
+	background-image: url('../img/about__icons.png')
+	display: inline-block
+	margin-bottom: 10px
+
+.ai-1
+	background-position: 0 0
+
+.ai-2
+	background-position: -72px 0
+
+.ai-3
+	background-position: -144px 0
+
+.ai-4
+	background-position: -216px 0
+
+.ai-5
+	background-position: -288px 0
+
+.ai-6
+	background-position: -360px 0
+
+.ai-7
+	background-position: -432px 0
+
+.proj__info
+	@include row-flex()
+
+.proj__map
+	@include col()
+	@include size(5)
+	img
+		max-width: 100%
+
+.proj__char
+	@include col()
+	@include size(7)
+	@include size-sm(12)
+	padding-top: 40px
+
+h3
+	font-size: 18px
+	font-family: $RM
+	text-transform: uppercase
+	line-height: 24px
+	color: #000
+	margin-bottom: 40px
+
+.proj__list
+	margin-bottom: 45px
+	li
+		font-size: 14px
+		line-height: 23px
+		margin-bottom: 22px
+		position: relative
+		padding-left: 25px
+		&:after
+			position: absolute
+			content: ''
+			background-color: #CACED2
+			top: 9px
+			left: 0px
+			border-radius: 50%
+			width: 8px
+			height: 8px
+
+.pdf__btn
+	span
+		position: relative
+		padding-left: 42px
+		&:after
+			position: absolute
+			content: ''
+			background-image: url('../img/doc.png')
+			background-size: 100% 100%
+			top: 50%
+			margin-top: -15px
+			left: 0px
+			width: 24px
+			height: 30px
+
+.swiper-container
+	max-width: 100%
+	width: 1070px
+	overflow: visible
+
+.swiper-slide
+	width: 40%
+	height: auto!important
+
+.slide__photo
+	transform: scale(.8, .8)
+	background-position: center
+	background-size: cover
+	transition: all 0.5s ease
+	display: flex
+	align-items: center
+	justify-content: center
+	height: 100%
+	img
+		max-height: 80vh
+
+.swiper-slide_big
+	width: 70%
+
+.swiper-wrapper
+	display: flex!important
+
+.swiper-slide-active
+	.slide__photo
+		transform: scale(1, 1)
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next
+	left: -45px
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev
+	right: -45px
+
+.swiper-button-next, .swiper-button-prev
+	width: 15px
+	height: 26px
+	background-size: 100% 100%
+	background-image: none!important
+	img
+		width: 100%
+		height: 100%
+
+#to-proj-1
+	padding-bottom: 40px
+
+
+
+
+/*##########################  3. Контакты  ##########################*/
+
+
+
+.sect-contacts
+	background-color: #fff
+
+.contacts__title
+	text-align: center
+	color: #010101
+	font-size: 30px
+	font-family: $MB
+	line-height: 36px
+	@include psd-letter-spacing(50)
+	text-transform: uppercase
+	padding: 30px 0px
+
+.map__wrap
+	position: relative
+
+#map
+	height: 570px
+
+.copyright
+	text-align: center
+	padding: 30px 0px 35px
+	p
+		font-size: 13px
+		font-family: $RR
+		color: #000
+
+.contacts__box
+	border: 4px solid #fff
+	box-shadow: 0px 16px 21px 0px rgba(0, 0, 0, 0.22)
+	padding: 23px
+	position: absolute
+	top: 50%
+	z-index: 2
+	right: 50%
+	margin-right: 70px
+	transform: translateY(-50%)
+	width: 500px
+
+.contacts__logo
+	display: block
+	background-color: #fff
+	margin-bottom: 25px
+	box-shadow: 0px 16px 21px 0px rgba(0, 0, 0, 0.44)
+	display: flex
+	align-items: center
+	img
+		margin-right: 10px
+	span
+		font-family: $MB
+		line-height: 22px
+		color: #000
+		text-transform: uppercase
+		span
+			font-size: 12px
+			display: block
+
+.contacts__content
+	box-shadow: 0px 16px 21px 0px rgba(0, 0, 0, 0.44)
+	background-color: rgba(#19242C, .71)
+	padding: 27px 35px
+	color: #fff
+	p
+		font-size: 14px
+		font-family: $RR
+		margin-bottom: 10px
+		a
+			color: #fff!important
+
+.mfp-fade
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.2s ease-out
+		background-color: #000
+		&.mfp-ready
+			opacity: 0.7
+		&.mfp-removing
+			opacity: 0
+			transition: all 0.6s ease-out
+	&.mfp-wrap
+		.mfp-content
+			opacity: 0
+			transform: translateY(-100%)
+			transition: transform 0.6s ease-out
+		&.mfp-ready .mfp-content
+			opacity: 1
+			transform: translateY(0)
+		&.mfp-removing .mfp-content
+			opacity: 0
+
+.mfp-arrow-right:before, .mfp-arrow-right .mfp-b
+	border-left: 27px solid $accent2
+
+.burger
+	display: none
+	margin-left: auto
+	z-index: 101
+	position: relative
+	span
+		width: 35px
+		transition: all 0.5s ease
+		display: block
+		background-color: $accent
+		position: relative
+		height: 5px
+		border-radius: 5px
+		&:not(:last-child)
+			margin-bottom: 5px
+	&_active
+		span
+			&:nth-child(2)
+				display: none
+			&:first-child
+				transform: rotate(45deg)
+				top: 5px
+			&:last-child
+				transform: rotate(-45deg)
+				bottom: 5px
+
+.nav__wrap
+	flex-grow: 1
+	display: flex
+
+
+@import "media"
+
+
+
+
+
+
+
+
+
+
+

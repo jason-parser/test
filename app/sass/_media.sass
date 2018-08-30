@@ -1,0 +1,98 @@
+@import "vars"
+
+
+@media only screen and (max-width : 1170px)
+	.wrapper
+		max-width: 991px
+	.email__wrap, .our-proj__btn:not(:last-child)
+		margin-right: 30px
+	.contacts__box
+		margin-right: 23px
+
+@media only screen and (max-width : 991px)
+	.wrapper
+		max-width: 767px
+	.burger
+		display: block
+	.nav__wrap
+		display: none
+		width: 100%
+		position: absolute
+		top: 100%
+		background-color: #fff
+		left: 0px
+		z-index: 10
+		margin-top: -1px
+	.header__head
+		position: relative
+	.h-head__content
+		align-items: center
+		flex-wrap: wrap
+	.our-proj__btns
+		flex-wrap: wrap
+		padding-top: 15px
+		margin-bottom: 15px
+		p
+			width: 100%
+			text-align: center
+			margin-bottom: 10px
+	.our-proj__btns
+		p
+			&:not(:last-child)
+				margin-right: 0px
+	.header__contacts
+		flex-wrap: wrap
+		justify-content: center
+	.email__wrap
+		margin-right: 0px
+		margin-bottom: 20px
+	.phone__wrap
+		width: 100%
+		text-align: center
+		margin-bottom:  20px
+	.header
+		.logo__link
+			img
+				width: 80px
+	.header__desc
+		br
+			display: none
+	.about__item
+		margin-bottom: 15px
+	.contacts__box
+		position: relative
+		top: 0px
+		right: 0px
+		margin-right: 0px
+		transform: translateY(0)
+		width: 100%
+	#map
+		height: 480px
+
+@media only screen and (max-width : 767px)
+	.wrapper
+		max-width: 100%
+	.proj__map
+		display: none
+	.proj__about
+		margin-bottom: 0px
+	#to-proj-1
+		padding-bottom: 0px
+
+@media only screen and (max-width : 480px)
+	.h1, h1
+		padding-right: 0px
+	.h1__desc
+		padding: 12px 30px
+		margin: 0px -15px 30px
+		line-height: 25px
+		font-size: 20px
+		br
+			display: none
+	h2
+		font-size: 20px
+	.sect__desc
+		font-size: 16px
+	#map
+		height: 290px
+	
